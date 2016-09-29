@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title"><%= article.title =%></h4>
+    <div class="card-text">
+      <%= @mdParser.render(article.body).html_safe =%>
+    </div>
+  </div>
+  <div class="card-footer text-xs-right">
+    <%= link_to 'Show', article, class:"btn btn-info" %></td>
+    <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
+  </div>
+</div>

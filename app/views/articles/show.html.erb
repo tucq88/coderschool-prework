@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+
+    <h2><%= @article.title %></h2>
+    <hr>
+
+    <section>
+      <%= @mdParser.render(@article.body).html_safe %>
+    </section>
+    <hr>
+
+  <p class="text-xs-right">
+    <%= link_to 'Edit', edit_article_path(@article), class:"btn btn-warning" %>
+    &nbsp;
+    <%= link_to 'Back', articles_path, class:"btn btn-info" %>
+  </p>
+</div>
