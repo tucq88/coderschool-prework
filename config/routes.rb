@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # Static routing
+  root :to => 'static#home'
+  get 'about', to: 'static#about'
+
+  # Resource routing
   resources :articles
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
