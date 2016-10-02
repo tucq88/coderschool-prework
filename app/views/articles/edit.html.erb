@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
-    <h1>Editing Article</h1>
+    <div class="col-xs-12">
+      <h1>Editing Article</h1>
 
-    <%= render 'form', article: @article %>
+      <%= render 'form', article: @article %>
 
-    <%= link_to 'Show', @article %> |
-    <%= link_to 'Back', articles_path %>
+      <%= link_to 'Show', @article %> |
+      <%= link_to 'Back', articles_path %>
+    </div>
   </div>
 </div>
