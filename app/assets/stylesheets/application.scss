@@ -1,5 +1,51 @@
 @import "bootstrap";
+@import "pagination";
+
+@mixin max-screen($max) {
+  @media only screen and (max-width: $max) {
+    @content;
+  }
+}
 
 .navbar-main {
   margin-bottom: 30px;
+}
+
+.navbar-brand {
+  @include max-screen(768px) {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    width: 100%;
+  }
+}
+
+#search-form {
+  @include max-screen(768px) {
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    width: 100%;
+  }
+
+  > input {
+    @include max-screen(768px) {
+      max-width: 50%;
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+.page-header {
+  @include clearfix;
+  > h1 {
+    float: left;
+    margin-bottom: 0;
+  }
+
+  > .actions {
+    float: right;
+    line-height: 44px;
+  }
 }

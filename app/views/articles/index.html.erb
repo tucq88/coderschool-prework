@@ -1,15 +1,25 @@
 <div class="container">
 
   <div class="row">
-    <h1>Articles</h1>
-    <hr>
-    <p><%= link_to 'New Article', new_article_path, class:"btn btn-primary" %></p>
 
-    <p id="notice"><%= notice %></p>
+    <div class="col-xs-12">
 
-    <%= render @articles %>
-    <%= will_paginate @articles %>
+      <div class="page-header clearfix">
+        <h1>Articles</h1>
+        <div class="actions">
+          <%= page_entries_info @articles %>
+          <%= link_to 'New Article', new_article_path, class:"btn btn-primary" %>
+        </div>
+      </div>
+      <hr>
+
+      <p id="notice"><%= notice %></p>
+
+      <%= render @articles %>
+      <div class="text-xs-center">
+        <%= will_paginate @articles, :class => 'digg_pagination', :style => 'display:inline-block' %>
+        </div>
+
+    </div>
 
 </div>
-
-
