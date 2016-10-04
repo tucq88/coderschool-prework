@@ -36,7 +36,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![demo-gif](http://i.imgur.com/khekaLj.gif)
+![demo-gif](walkthrough.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
