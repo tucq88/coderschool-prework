@@ -25,10 +25,12 @@
                 <a class="nav-link" href="/about">About</a>
               </li>
             </ul>
-            <form class="form-inline pull-xs-right" id="search-form">
-              <input class="form-control" type="text" placeholder="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <%= form_tag("/articles", method: "get", class: "form-inline pull-xs-right", id: "search-form") do %>
+              <%= text_field_tag 'query', params[:query],
+                  placeholder: "Search article's title",
+                  class: 'form-control' %>
+              <%= button_tag("Search", class: "btn btn-outline-success") %>
+            <% end %>
           </div>
         </nav>
     </div>

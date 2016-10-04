@@ -4,7 +4,14 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.paginate(:page => params[:page], :per_page => 3)
+    if (params[:query])
+      query = params[:query]
+      @articles = Article.where("title ILIKE ?","%#{query}%")
+                         .paginate(:page => params[:page], :per_page => 3)
+    else
+      @articles = Article.paginate(:page => params[:page], :per_page => 3)
+    end
+
     @mdParser = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 
