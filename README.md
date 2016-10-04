@@ -30,6 +30,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Latest posts display first
+- [x] Add pagination support
 - [x] Improve navbar mobile's responsiveness
 
 ## Video Walkthrough
