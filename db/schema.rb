@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929163632) do
+ActiveRecord::Schema.define(version: 20161002173322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_views", force: :cascade do |t|
+    t.integer "total_count"
+    t.integer "article_id"
+    t.index ["article_id"], name: "index_article_views_on_article_id", using: :btree
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -22,4 +28,5 @@ ActiveRecord::Schema.define(version: 20160929163632) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "article_views", "articles"
 end

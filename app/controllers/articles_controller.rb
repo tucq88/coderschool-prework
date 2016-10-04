@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-
     @articles = Article.paginate(:page => params[:page], :per_page => 3)
     @mdParser = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
@@ -12,6 +11,11 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+
+    @articleView = ArticleView.find_or_create_by(article_id: 2)
+    @articleView.total_count = @articleView.total_count.nil? ? 1 : @articleView.total_count + 1
+    @articleView.save
+
     @mdParser = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 
