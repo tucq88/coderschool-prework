@@ -29,8 +29,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] Latest posts display first
-- [ ] Improve navbar mobile's responsiveness
+- [x] Latest posts display first
+- [x] Improve navbar mobile's responsiveness
 
 ## Video Walkthrough
 

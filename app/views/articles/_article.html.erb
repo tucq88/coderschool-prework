@@ -5,10 +5,16 @@
       <%= @mdParser.render(article.body).html_safe =%>
     </div>
   </div>
-  <div class="card-footer text-xs-right">
-    <%= link_to 'Show', article, class:"btn btn-info" %></td>
-    <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
-    <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-
+  <div class="card-footer">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <p><strong>Created at: </strong><%= article.created_at.strftime("%Y-%m-%d %H:%m") %></p>
+      </div>
+      <div class="col-xs-12 col-sm-6 text-xs-right">
+        <%= link_to 'Show', article, class:"btn btn-info" %></td>
+        <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
+        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </div>
+    </div>
   </div>
 </div>

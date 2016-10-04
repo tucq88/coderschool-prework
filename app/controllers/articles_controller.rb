@@ -8,8 +8,10 @@ class ArticlesController < ApplicationController
       query = params[:query]
       @articles = Article.where("title ILIKE ?","%#{query}%")
                          .paginate(:page => params[:page], :per_page => 3)
+                         .order('created_at DESC')
     else
       @articles = Article.paginate(:page => params[:page], :per_page => 3)
+                         .order('created_at DESC')
     end
 
     @mdParser = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
