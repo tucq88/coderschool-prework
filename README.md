@@ -4,7 +4,7 @@
 
 Submitted by: **Tu, Chu Quang**
 
-Time spent: **4-6** hours spent in total (Being interrupted by my baby)
+Time spent: **12-15** hours spent in total (Being interrupted by my baby)
 
 URL: **[https://evening-lake-96514.herokuapp.com/articles/](https://evening-lake-96514.herokuapp.com/articles/)**
 
