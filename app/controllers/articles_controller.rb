@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
 
-    @articleView = ArticleView.find_or_create_by(article_id: 2)
+    @articleView = ArticleView.find_or_create_by(article_id: @article.id)
     @articleView.total_count = @articleView.total_count.nil? ? 1 : @articleView.total_count + 1
     @articleView.save
 
